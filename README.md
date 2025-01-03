@@ -1,4 +1,4 @@
-### SWPTPM Fault Injector
+### SWTPM Fault Injector
 This program acts as a proxy between a client and a software TPM (swtpm), enabling fault injection into TPM command responses. The primary purpose is to test and debug systems interacting with TPMs by simulating faulty responses.
 
 ```
