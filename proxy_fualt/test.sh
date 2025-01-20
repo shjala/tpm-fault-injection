@@ -2,6 +2,7 @@
 #!/bin/bash
 
 CWD=$(pwd)
+SWTPM=/usr/local/bin/swtpm
 TPM_STATE=/tmp/swtpm
 TPM_CTRL="$TPM_STATE/ctrl.sock"
 TPM_SRV="$TPM_STATE/srv.sock"
@@ -12,7 +13,7 @@ echo "[+] preparing the environment ..."
 rm -rf $TPM_STATE
 mkdir -p $TPM_STATE
 
-swtpm socket --tpm2 \
+$SWTPM socket --tpm2 \
     --flags startup-clear \
     --server type=unixio,path="$TPM_SRV" \
     --ctrl type=unixio,path="$TPM_CTRL" \
